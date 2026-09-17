@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Gym Buddy</string>
+    <string name="title_activity_main">Gym Buddy</string>
+    <string name="package_name">com.kinetic.gymbuddy</string>
+    <string name="custom_url_scheme">com.kinetic.gymbuddy</string>
+</resources>

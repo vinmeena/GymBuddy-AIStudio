@@ -1,0 +1,107 @@
+{
+  "client": {
+    "id": "c1",
+    "loginId": "marcus_vance",
+    "name": "Marcus Vance",
+    "email": "marcus@kineticgym.io",
+    "level": "Elite Athlete",
+    "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150",
+    "activeTier": "ELITE",
+    "hasPaidFee": true,
+    "gymName": "Kinetic Performance Lab",
+    "workoutPlan": {
+      "id": "w1",
+      "title": "HYPERTROPHY CHEST & TRICEPS",
+      "subtitle": "HEAVY PRESS & ISOLATION",
+      "durationMin": 65,
+      "targetKcal": 580,
+      "date": "2026-08-03",
+      "exercises": [
+        {
+          "id": "e1",
+          "name": "INCLINE DUMBBELL PRESS",
+          "category": "CHEST",
+          "type": "HYPERTROPHY",
+          "sets": [
+            { "setNumber": 1, "previous": "32kg x 10", "weight": 34, "reps": 10, "completed": true },
+            { "setNumber": 2, "previous": "34kg x 8", "weight": 36, "reps": 8, "completed": true },
+            { "setNumber": 3, "previous": "34kg x 8", "weight": 36, "reps": 8, "completed": false }
+          ]
+        },
+        {
+          "id": "e2",
+          "name": "CABLE CHEST FLY",
+          "category": "CHEST",
+          "type": "ISOLATION",
+          "sets": [
+            { "setNumber": 1, "previous": "18kg x 12", "weight": 20, "reps": 12, "completed": true },
+            { "setNumber": 2, "previous": "20kg x 10", "weight": 22, "reps": 10, "completed": false }
+          ]
+        }
+      ]
+    },
+    "dietPlan": {
+      "id": "d1",
+      "date": "2026-08-03",
+      "macros": {
+        "protein": { "current": 180, "target": 220 },
+        "carbs": { "current": 250, "target": 300 },
+        "fats": { "current": 60, "target": 75 }
+      },
+      "meals": [
+        {
+          "id": "m1",
+          "timeLabel": "MEAL 01: BREAKFAST",
+          "name": "EGG WHITE OMELETTE & OATS",
+          "kcal": 550,
+          "proteinG": 48,
+          "completed": true
+        },
+        {
+          "id": "m2",
+          "timeLabel": "MEAL 02: POST-WORKOUT",
+          "name": "GRILLED CHICKEN & JASMINE RICE",
+          "kcal": 720,
+          "proteinG": 65,
+          "completed": true
+        },
+        {
+          "id": "m3",
+          "timeLabel": "MEAL 03: DINNER",
+          "name": "ATLANTIC SALMON & QUINOA",
+          "kcal": 680,
+          "proteinG": 55,
+          "completed": false
+        }
+      ]
+    },
+    "cardioLogs": [
+      {
+        "id": "cardio1",
+        "date": "2026-08-02",
+        "type": "RUN",
+        "distanceKm": 5.2,
+        "timeMin": "24:30",
+        "avgHeartRate": 152,
+        "pace": "4:42/KM"
+      }
+    ],
+    "wellnessCheckIns": [
+      {
+        "id": "w1",
+        "date": "2026-08-03",
+        "sleepQuality": 5,
+        "soreness": 2,
+        "motivation": 5,
+        "notes": "Optimal energy levels, chest press felt light."
+      }
+    ]
+  },
+  "trainer": {
+    "id": "t1",
+    "name": "Coach Marcus Vance",
+    "specialty": "Hypertrophy & Elite Conditioning",
+    "experience": "12+ Years Pro Coaching",
+    "gymName": "Kinetic Performance Lab"
+  }
+}

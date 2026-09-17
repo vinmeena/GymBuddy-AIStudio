@@ -1,0 +1,121 @@
+{
+  "entities": {
+    "Client": {
+      "title": "Client",
+      "description": "Client athlete profile",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "avatarUrl": { "type": "string" },
+        "linkedTrainerId": { "type": "string" },
+        "linkedTrainerStatus": { "type": "string" }
+      },
+      "required": ["id", "name"]
+    },
+    "Trainer": {
+      "title": "Trainer",
+      "description": "Trainer/Coach profile",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "avatarUrl": { "type": "string" },
+        "specialty": { "type": "string" }
+      },
+      "required": ["id", "name"]
+    },
+    "JobPosting": {
+      "title": "JobPosting",
+      "description": "Trainer job posting",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" }
+      },
+      "required": ["id", "title"]
+    },
+    "ClientAssessment": {
+      "title": "ClientAssessment",
+      "description": "Athlete fitness assessment",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "clientId": { "type": "string" }
+      },
+      "required": ["id", "clientId"]
+    },
+    "ChatMessage": {
+      "title": "ChatMessage",
+      "description": "Direct message chat logs",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "senderId": { "type": "string" },
+        "recipientId": { "type": "string" },
+        "text": { "type": "string" }
+      },
+      "required": ["id", "senderId", "recipientId", "text"]
+    },
+    "PushNotification": {
+      "title": "PushNotification",
+      "description": "Live push notification",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "recipientId": { "type": "string" },
+        "text": { "type": "string" }
+      },
+      "required": ["id", "recipientId", "text"]
+    },
+    "User": {
+      "title": "User",
+      "description": "User profile with role details",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "loginId": { "type": "string" },
+        "email": { "type": "string" },
+        "name": { "type": "string" },
+        "role": { "type": "string" },
+        "passwordPlain": { "type": "string" },
+        "avatarUrl": { "type": "string" },
+        "trainerId": { "type": "string" },
+        "clientId": { "type": "string" },
+        "gymName": { "type": "string" },
+        "phone": { "type": "string" }
+      },
+      "required": ["id", "name", "role"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User accounts and credentials for coaches, clients, and owners"
+    },
+    "/clients/{clientId}": {
+      "schema": "Client",
+      "description": "Client records"
+    },
+    "/trainers/{trainerId}": {
+      "schema": "Trainer",
+      "description": "Trainer records"
+    },
+    "/jobs/{jobId}": {
+      "schema": "JobPosting",
+      "description": "Trainer job applications/postings"
+    },
+    "/assessments/{assessmentId}": {
+      "schema": "ClientAssessment",
+      "description": "Athlete fitness assessments"
+    },
+    "/chats/{chatId}": {
+      "schema": "ChatMessage",
+      "description": "Direct message chat logs"
+    },
+    "/notifications/{notificationId}": {
+      "schema": "PushNotification",
+      "description": "Live push notifications"
+    }
+  }
+}

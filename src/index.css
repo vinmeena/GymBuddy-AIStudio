@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Anybody:ital,wght@0,100..900;1,100..900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-volt: #a3e635;
+  --color-volt-dim: #84cc16;
+}
+
+/* Mobile Safe Area & Touch Optimization */
+:root {
+  --sat: env(safe-area-inset-top, 0px);
+  --sab: env(safe-area-inset-bottom, 0px);
+  --sal: env(safe-area-inset-left, 0px);
+  --sar: env(safe-area-inset-right, 0px);
+}
+
+.safe-top {
+  padding-top: var(--sat);
+}
+
+.safe-bottom {
+  padding-bottom: var(--sab);
+}
+
+/* Touch friendly minimum sizes for mobile devices */
+@media (max-width: 768px) {
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Prevent iOS automatic zoom by ensuring standard form input font size is at least 16px */
+  input:not(.compact-input), select, textarea {
+    font-size: 16px !important;
+  }
+  
+  /* Scale up microscopic monospace labels slightly on small mobile screens */
+  .text-\[8px\], .text-\[9px\] {
+    font-size: 10px !important;
+  }
+  
+  .text-\[10px\] {
+    font-size: 11px !important;
+  }
+}
+
+/* Remove spin buttons from number inputs across all browsers */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0 !important;
+}
+input[type="number"] {
+  -moz-appearance: textfield !important;
+  appearance: textfield !important;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  background-color: #09090b;
+  color: #fafafa;
+  font-family: var(--font-sans);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.bento-card {
+  background-color: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 1.5rem;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.bento-card:hover {
+  border-color: #a3e635;
+}
+
+.volt-glow {
+  box-shadow: 0 0 15px rgba(163, 230, 53, 0.15);
+}
+
+.volt-glow-active {
+  box-shadow: 0 0 25px rgba(163, 230, 53, 0.35);
+}
+
+/* Global Text Readability, Subpixel Antialiasing, and High-Contrast Overrides */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body:not(.light) {
+  color: #fafafa;
+}
+
+body:not(.light) p {
+  color: #d4d4d8; /* text-zinc-300 contrast boost */
+  line-height: 1.6;
+}
+
+body:not(.light) .text-zinc-400 {
+  color: #b4b4bb !important; /* higher visibility contrast on dark bg */
+}
+
+body:not(.light) .text-zinc-500 {
+  color: #909099 !important; /* better readability for captions and muted details */
+}
+
+body:not(.light) .text-zinc-600 {
+  color: #7a7a85 !important; /* contrast safety override */
+}
+
+/* Elegant, premium custom scrollbars that show on scrollable elements */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(9, 9, 11, 0.5);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(163, 230, 53, 0.2);
+  border-radius: 9999px;
+  border: 1.5px solid rgba(9, 9, 11, 0.5);
+  transition: all 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a3e635;
+}
+
+/* Explicit class to completely hide scrollbars where appropriate */
+.scrollbar-none {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* ---------------------------------------------------------
+   HIGH-END LIGHT MODE STYLES & CONTRAST OVERRIDES
+   --------------------------------------------------------- */
+body.light {
+  background-color: #f4f4f5;
+  color: #18181b;
+}
+
+/* General Layout & Card Background Overrides */
+body.light .bg-\[\#09090b\],
+body.light .bg-black,
+body.light .bg-zinc-950,
+body.light .bg-zinc-900\/50,
+body.light .bg-\[\#121414\],
+body.light .bg-\[\#09090b\]\/90,
+body.light .bg-\[\#18181b\]\/50 {
+  background-color: #ffffff !important;
+}
+
+body.light .bg-\[\#18181b\],
+body.light .bg-zinc-900,
+body.light .bg-zinc-800,
+body.light .bg-zinc-850,
+body.light .bg-zinc-950\/80 {
+  background-color: #ffffff !important;
+  border-color: #e4e4e7 !important;
+}
+
+/* Sidebar & Header Panels */
+body.light header {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border-bottom-color: #e4e4e7 !important;
+}
+
+body.light aside {
+  background-color: #ffffff !important;
+  border-color: #e4e4e7 !important;
+}
+
+body.light .bento-card {
+  background-color: #ffffff !important;
+  border-color: #e4e4e7 !important;
+}
+
+/* Inputs, Textareas, and Dropdowns */
+body.light input,
+body.light textarea,
+body.light select {
+  background-color: #f4f4f5 !important;
+  color: #18181b !important;
+  border-color: #e4e4e7 !important;
+}
+
+body.light input:focus,
+body.light textarea:focus,
+body.light select:focus {
+  border-color: #84cc16 !important;
+}
+
+body.light input::placeholder,
+body.light textarea::placeholder {
+  color: #a1a1aa !important;
+}
+
+/* High Contrast Text Overrides */
+body.light .text-white,
+body.light .text-zinc-100,
+body.light .text-zinc-200 {
+  color: #18181b !important;
+}
+
+body.light .text-zinc-300,
+body.light .text-zinc-400 {
+  color: #27272a !important;
+}
+
+body.light .text-zinc-500 {
+  color: #71717a !important;
+}
+
+/* Borders */
+body.light .border-\[\#27272a\],
+body.light .border-zinc-800,
+body.light .border-zinc-800\/60,
+body.light .border-zinc-850,
+body.light .border-zinc-700 {
+  border-color: #e4e4e7 !important;
+}
+
+/* Volt Green Tweaks for Light Mode Readability */
+body.light .text-volt {
+  color: #65a30d !important; /* slightly darker to guarantee contrast */
+}
+
+body.light .bg-volt {
+  background-color: #84cc16 !important;
+  color: #ffffff !important;
+}
+
+body.light .text-volt-dim {
+  color: #4d7c0f !important;
+}
+
+/* Soft Color Badges & Status Indication */
+body.light .bg-emerald-500\/10 {
+  background-color: #ecfdf5 !important;
+}
+body.light .text-emerald-400 {
+  color: #047857 !important;
+}
+body.light .border-emerald-500\/20 {
+  border-color: #a7f3d0 !important;
+}
+
+body.light .bg-rose-500\/10 {
+  background-color: #fff1f2 !important;
+}
+body.light .text-rose-400 {
+  color: #b91c1c !important;
+}
+body.light .border-rose-500\/20 {
+  border-color: #fecdd3 !important;
+}
+
+body.light .bg-amber-400\/10 {
+  background-color: #fffbeb !important;
+}
+body.light .text-amber-400 {
+  color: #b45309 !important;
+}
+
+/* Override custom inner container colors */
+body.light .bg-\[\#18181b\] {
+  background-color: #ffffff !important;
+}
+body.light .bg-\[\#09090b\] {
+  background-color: #f4f4f5 !important;
+}
+
+

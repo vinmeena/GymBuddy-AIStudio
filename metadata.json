@@ -1,0 +1,6 @@
+{
+  "name": "Gym Buddy",
+  "description": "Premium training portal and client app featuring custom workout routines, nutrition planning, cardio logs, supplementation tracking, and trainer-client chat with dynamic offers and premium payment gate.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
